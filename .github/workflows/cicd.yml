@@ -14,13 +14,14 @@ jobs: # the sequence of jobs to run
     runs-on: ubuntu-latest # the runner to use
 
     steps: # the sequence of steps to run
-    - name: Checkout code # checkout the code from the repository
+    - name: Checkout code from repository # checkout the code from the repository
       uses: actions/checkout@v3 # checkout the code from the repository
 
     - name: Set up Python 3.10 # set up Python 3.10
-      uses: actions/setup-python@v5
-      with: # the input parameters
-        python-version: 3.10
+      run: | # the shell commands to run
+        sudo apt update
+        sudo apt install python3.10
+        python3.10 --version
 
     - name: Install dependencies # install the dependencies
       run: | # the shell commands to run
