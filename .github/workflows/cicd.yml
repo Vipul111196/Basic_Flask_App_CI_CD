@@ -14,7 +14,8 @@ jobs: # the sequence of jobs to run
     runs-on: ubuntu-latest # the runner to use
 
     steps: # the sequence of steps to run
-    - uses: actions/checkout@v3 # checkout the code from the repository
+    - name: Checkout code # checkout the code from the repository
+      uses: actions/checkout@v3 # checkout the code from the repository
 
     - name: Set up Python 3.10 # set up Python 3.10
       uses: actions/setup-python@v5
